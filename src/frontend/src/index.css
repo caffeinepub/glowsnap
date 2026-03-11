@@ -1,0 +1,125 @@
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/assets/fonts/PlayfairDisplay-VariableFont_wght.woff2")
+    format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/assets/fonts/Outfit-VariableFont_wght.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark immersive camera theme */
+    --background: 0.08 0 0;
+    --foreground: 0.96 0.01 90;
+    --card: 0.12 0.005 270;
+    --card-foreground: 0.96 0.01 90;
+    --popover: 0.1 0.005 270;
+    --popover-foreground: 0.96 0.01 90;
+    --primary: 0.75 0.15 65;
+    --primary-foreground: 0.08 0 0;
+    --secondary: 0.18 0.01 270;
+    --secondary-foreground: 0.96 0.01 90;
+    --muted: 0.15 0.005 270;
+    --muted-foreground: 0.6 0.01 270;
+    --accent: 0.7 0.18 340;
+    --accent-foreground: 0.98 0 0;
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.22 0.01 270;
+    --input: 0.18 0.01 270;
+    --ring: 0.75 0.15 65;
+    --radius: 1rem;
+    --chart-1: 0.75 0.15 65;
+    --chart-2: 0.7 0.18 340;
+    --chart-3: 0.65 0.14 200;
+    --chart-4: 0.8 0.12 120;
+    --chart-5: 0.72 0.16 280;
+    --sidebar: 0.1 0.005 270;
+    --sidebar-foreground: 0.96 0.01 90;
+    --sidebar-primary: 0.75 0.15 65;
+    --sidebar-primary-foreground: 0.08 0 0;
+    --sidebar-accent: 0.18 0.01 270;
+    --sidebar-accent-foreground: 0.96 0.01 90;
+    --sidebar-border: 0.22 0.01 270;
+    --sidebar-ring: 0.75 0.15 65;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Outfit", sans-serif;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
+
+  #root {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: oklch(0.12 0.005 270 / 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid oklch(0.35 0.02 270 / 0.4);
+  }
+
+  .glass-gold {
+    background: oklch(0.75 0.15 65 / 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid oklch(0.75 0.15 65 / 0.4);
+  }
+
+  .gold-text {
+    color: oklch(0.82 0.14 75);
+  }
+
+  .gold-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.82 0.14 75),
+      oklch(0.68 0.16 55),
+      oklch(0.75 0.12 85)
+    );
+  }
+
+  .filter-ring {
+    box-shadow: 0 0 0 3px oklch(0.82 0.14 75), 0 0 0 5px
+      oklch(0.82 0.14 75 / 0.3);
+  }
+
+  .capture-btn-glow {
+    box-shadow: 0 0 0 4px oklch(0.98 0 0 / 0.5), 0 0 20px
+      oklch(0.82 0.14 75 / 0.6), 0 0 40px oklch(0.82 0.14 75 / 0.2);
+  }
+
+  .scroll-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scroll-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
